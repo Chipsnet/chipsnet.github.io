@@ -1,14 +1,22 @@
-<html>
-    <head>
-        <title>Hack ME</title>
-
-        <!-- jquery -->
-        <script src="jquery-3.4.1.slim.min.js"></script>
-        
-        <!-- js -->
-        <script src="main.js"></script>
-    </head>
-    <body>
-        <h1>ハックしろ</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(() => {
+            $('#genki').click(() => $('#result').html('なんでもできる'));
+            $('#notgenki').click(() => $('#result').html('なんでもできない'));
+        })
+    </script>
+    <title>アントニオ猪木(Web版)</title>
+</head>
+<body>
+    <h1>★Web版 アントニオ猪木★</h1>
+    <h1>元気ですかっ！</h1>
+    <button id="genki">元気</button>
+    <button id="notgenki">元気じゃない</button>
+    <h1 id="result"></h1>
+</body>
 </html>
