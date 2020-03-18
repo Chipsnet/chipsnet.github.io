@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>香川変換器</title>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(() => {
+                const kagawa = () => {
+                    console.log('aaaaaaaa');
+                    console.log($('#time-prefix').val());
+                    
+                    var time_res
+                    var time_val = $('#time').val()
+                    var time_prefix = $('#time-prefix').val()
+
+                    switch (time_prefix) {
+                        case "hour":
+                            time_res = time_val
+                            break;
+                        case "min":
+                            time_res = parseInt(time_val) / 60
+                            break
+                        case "sec":
+                            time_res = parseInt(time_val) / 60 / 60
+                            break
+                    }
+                    
+                    $('#result').val(`${time_res}香川`)
+                }
+        
+                $('#do').click(() => kagawa());
+            })
+        </script>
+    </head>
+    <body>
+        <h1>香川変換器オンライン</h1>
+        <p>時間→香川に変換するWebツールです。</p>
+        <input type="text" id="time">
+        <select id="time-prefix">
+            <option value="hour">時間</option>
+            <option value="min">分</option>
+            <option value="sec">秒</option>
+        </select>
+        <br>
+        <button type="button" id="do">変換！</button><p>↓</p>
+        <input type="text" id="result" disabled><br>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="香川変換器オンライン" data-via="minatoo86" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </body>
+</html>
